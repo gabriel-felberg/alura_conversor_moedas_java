@@ -9,10 +9,10 @@ import java.net.http.HttpResponse;
 
 
 public class Server {
-    HttpClient client = HttpClient.newHttpClient();
-    Gson gson = new Gson();
+    static HttpClient client = HttpClient.newHttpClient();
+    static Gson gson = new Gson();
 
-    public Coin getCoin(String key, String baseURL, String from, String to) throws IOException, InterruptedException {
+    public static Coin getCoin(String key, String baseURL, String from, String to) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(baseURL + key + "/pair/" + from + "/" + to))
                 .build();
